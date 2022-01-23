@@ -1,0 +1,6 @@
+{% if request.user.is_authenticated %}
+    <form method="POST">{% csrf_token %}
+    <p>You are already logged in. Do you want to logout?</p>
+    <button type="submit">Yes, logout</button>
+    </form>
+{% endif %}

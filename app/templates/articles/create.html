@@ -1,0 +1,18 @@
+
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form }}
+{#    ######## HTML FORM #########}
+{#    <div style="margin-top: 10px">#}
+{#        <input type="text" name="title" placeholder="Article title"/>#}
+{#    </div>#}
+{##}
+{#    <div style="margin-top: 10px">#}
+{#        <textarea name="content" placeholder="Article content"></textarea>#}
+{#    </div>#}
+    <button  style="margin-top: 10px" type="submit">Create Article</button>
+</form>
+{% if created %}
+<p>New article created</p>
+<a href="/articles/{{ object.id }}">Click here to visit the new article</a>
+{% endif %}

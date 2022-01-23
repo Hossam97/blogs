@@ -1,0 +1,11 @@
+<h1>This is article number: {{article_object.id}}</h1>
+<h2>{{ article_object.title }}</h2>
+{% if article_object.author == 'No Author Available' %}
+    <h3>Written by nobody!</h3>
+    {% else %}
+    <h3>{{ article_object.author }}</h3>
+    {% endif %}
+
+<p>{{article_object.content}}</p>
+<p>{{ article_object.date }} - {{ article_object.time }}</p>
+

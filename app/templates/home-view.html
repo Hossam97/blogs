@@ -1,0 +1,20 @@
+<form method="GET" action="articles/">
+    <input type="text" name="q"/>
+    <input type="submit" value="Search"/>
+</form>
+
+{% if request.user.is_authenticated %}
+    <p>You are logged in as {{ request.user.username }}, <a href="/logout/">logout?</a></p>
+{% else %}
+    <p>You need to <a href="/login/">login</a></p>
+{% endif %}
+
+
+<a href="articles/create">New Article</a>
+<a href="login/">Login</a>
+<a href="register/">Register</a>
+
+{% for i in articles %}
+    <h1><a href="articles/{{ i.id }}">{{ i.title }}</a></h1>
+{% endfor %}
+
